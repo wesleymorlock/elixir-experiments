@@ -11,7 +11,7 @@ defmodule GenstageExample.Consumer do
 
   def handle_events(events, _from, state) do
     for event <- events do
-      :timer.sleep(1000)
+      :timer.sleep(500)
       IO.inspect({self(), event, state})
     end
 

@@ -9,7 +9,7 @@ defmodule GenstageExample.Producer do
     end
 
     def init(counter) do
-        send(self(), :init)
+        # send(self(), :init)
 
         {:producer, counter} # labels this worker as a :producer
     end

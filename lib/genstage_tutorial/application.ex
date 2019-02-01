@@ -12,6 +12,8 @@ defmodule GenstageTutorial.Application do
       worker(GenstageExample.Producer, [0]),
       worker(GenstageExample.EvenFilterer, []),
       worker(GenstageExample.OddFilterer, []),
+      worker(GenstageExample.Consumer, [], id: 1),
+      worker(GenstageExample.Consumer, [], id: 2)
     ]
   
     opts = [strategy: :one_for_one, name: GenstageExample.Supervisor]
